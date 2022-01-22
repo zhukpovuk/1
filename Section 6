@@ -1,0 +1,29 @@
+chats_from_profile = ['a', 'b' , 'c' , 'd', 'c']
+dict_users = {
+'user_1': { 'name': 'Ivan', 'sex': 'man', 'age': 20, 'number of friends': 45, 'number of chats': 10, "set of user's chat": set(chats_from_profile), 'duration of the last session (hr)': 1.2},
+'user_2':{},
+'user_3':{}
+}
+dict_chat = {
+'chat_1': {'name': 'chat_1','members': 'user_1'+ 'user_2', 'number of members': len(dict_chat['chat_1']['members']), 'words':'Hi', 'Hellow'}
+}
+def add_to_chat(name_chat, user_num):
+    if user_num not in dict_users['user_num']["set of user's chat"]:
+        (dict_users['user_num']["set of user's cha"]).add(name_chat)
+        dict_users['user_num']['number of chats'] += 1
+        dict_chat[name_chat]['members']+'user_num'
+        return str(user_num) + 'was added to' + str(name_chat) 
+def find_mess(values, word_comb):
+    for k in values:
+        for v in values[k]:
+            if word_comb in v:
+                return k
+    return None
+def shared_chats(users): #input string of users' numbers joined by ''
+    a = map(int(), users.split())
+    set_0 = dict_users[a[0]]["set of user's chat"]
+    #s = []
+    for i in a[1::]:
+        set_0.interintersection_update(dict_users[a[i]]["set of user's chat"])
+    return set_0
+    
